@@ -903,28 +903,28 @@
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">
               <div class="row">
                 <div class="col form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                  <div class="validate"></div>
+                  <input type="text" name="name" class="form-control" id="contactname" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <!-- <div class="validate"></div> -->
                 </div>
                 <div class="col form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                  <div class="validate"></div>
+                  <input type="email" class="form-control" name="email" id="contactemail" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <!-- <div class="validate"></div> -->
                 </div>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                <div class="validate"></div>
+                <input type="text" class="form-control" name="subject" id="contactsubject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <!-- <div class="validate"></div> -->
               </div>
               <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                <div class="validate"></div>
+                <textarea class="form-control" id="contactmessage" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <!-- <div class="validate"></div> -->
               </div>
               <div class="mb-3">
                 <div class="loading">Loading</div>
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="text-center"><button onclick="wholemessage()">Send Message</button></div>
             </form>
           </div>
 
@@ -959,8 +959,8 @@
               <li><i class="bx bx-chevron-right"></i> <a href="#header">Home</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#services">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#portfolio">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#team">Privacy policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#portfolio">Portfolio</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#team">Our Team</a></li>
             </ul>
           </div>
 
@@ -979,11 +979,11 @@
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Join Our Newsletter</h4>
             <p>Keep up with DeFo Properties by subscribing to our Newsletter</p>
-            <form action="" method="">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
+            <form style="display: flex;">
+              <input id="subscriptionemail" style="width: 100%; border: none;">
+              <button style="background-color: #e03a3c; border: none; color: white;"onclick="test()">Subscribe</button>
             </form>
           </div>
-
         </div>
       </div>
     </div>
@@ -1028,6 +1028,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/contact.js"></script>
 
 </body>
 

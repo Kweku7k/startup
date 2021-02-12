@@ -5,7 +5,7 @@ function test(){
     url = "message" + "Laughed"
     console.log(url)
     var number = "0545977791"
-    url = "https://apps.mnotify.net/smsapi?key=" + "aniXLCfDJ2S0F1joBHuM0FcmH&to=" + number +"&msg=" + message +"&sender_id=TnsGhana"
+    url = "https://apps.mnotify.net/smsapi?key=" + "XJZrndKjI8ETrsUjwXuvB6qBH&to=" + number +"&msg=" + message +"&sender_id=TnsGhana"
     window.open(url)
 }
 

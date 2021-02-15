@@ -9,7 +9,6 @@ function test(){
     window.open(url)
 }
 
-
 function wholemessage(){
   var contactmessage = document.getElementById("contactmessage").value
   var contactemail = document.getElementById("contactemail").value

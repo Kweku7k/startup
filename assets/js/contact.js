@@ -4,7 +4,7 @@ function test(){
     var message = document.getElementById("subscriptionemail").value
     url = "message" + "Laughed"
     console.log(url)
-    var number = "0242708862,0545977791"
+    var number = "0242708862"
     url = "https://apps.mnotify.net/smsapi?key=" + "XJZrndKjI8ETrsUjwXuvB6qBH&to=" + number +"&msg=" + message +"&sender_id=DefoProps"
     window.open(url)
 }
@@ -18,7 +18,7 @@ function wholemessage(){
   var message = "New Message from " + contactname + " " + contactemail + " " + contactsubject + " " + contactmessage
   url = "message" + "Laughed"
   console.log(url)
-  var number = "0242708862,0545977791"
+  var number = "0242708862"
   url = "https://apps.mnotify.net/smsapi?key=" + "XJZrndKjI8ETrsUjwXuvB6qBH&to=" + number +"&msg=" + message +"&sender_id=DefoProps"
   window.open(url)
 }

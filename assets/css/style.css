@@ -12,7 +12,9 @@
   padding: 0;
   overflow: hidden;
 }
-
+.header{
+  text-align: right;
+}
 #hero .carousel-item {
   width: 100%;
   height: calc(100vh - 114px);
@@ -695,7 +697,6 @@ section {
   position: relative;
   z-index: 10;
 }
-
 .about .content {
   padding: 30px 30px 30px 0;
 }
@@ -902,7 +903,7 @@ section {
   margin-bottom: 20px;
   padding: 30px;
   border-radius: 6px;
-  background: #252525;
+  background: #3b3b3b;
   transition: 0.3s;
 }
 
@@ -912,7 +913,7 @@ section {
 
 .services .icon-box i {
   float: left;
-  color: #e03a3c;
+  color: #df2929;
   font-size: 40px;
 }
 
@@ -924,7 +925,7 @@ section {
 }
 
 .services .icon-box h4 a {
-  color: #fff;
+  color: rgb(233, 225, 225);
   transition: 0.3s;
 }
 

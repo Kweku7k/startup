@@ -1,41 +1,44 @@
+
 <?php
-  /**
-  * Requires the "PHP Email Form" library
-  * The "PHP Email Form" library is available only in the pro version of the template
-  * The library should be uploaded to: vendor/php-email-form/php-email-form.php
-  * For more info and help: https://bootstrapmade.com/php-email-form/
-  */
+    $endPoint = 'https://api.mnotify.com/api/template';
+    $apiKey = 'aniXLCfDJ2S0F1joBHuM0FcmH';
+    $id = 1;
+    $url = $endPoint . '/' . $id . '?key=' . $apiKey;
 
-  // Replace contact@example.com with your real receiving email address
-  $receiving_email_address = 'contact@example.com';
-
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    include( $php_email_form );
-  } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
-  }
-
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
-  
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
-
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  /*
-  $contact->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
-    'password' => 'pass',
-    'port' => '587'
-  );
-  */
-
-  $contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
-  $contact->add_message( $_POST['message'], 'Message', 10);
-
-  echo $contact->send();
+    echo $id;
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+    $result = curl_exec($ch);
+    $result = json_decode($result, TRUE);
+    curl_close($ch);
 ?>
+
+https://apps.mnotify.net/smsapi?key=aniXLCfDJ2S0F1joBHuM0FcmH&to=0545977791&msg=Order+id+61+has+been+placed+by+Nana+Kweku+Adumatta+at+OG+block+3+room+20+.+You+can+call+on+0545977791%0A%5B%7B%22itemname%22%3A%22Fried+Rice+%26+Goat%22%2C%22price%22%3A%22%E2%82%B535.00%22%2C%22quantity%22%3A%221%22%7D%5D%0A+N
+
+
+
+<?php
+$endPoint = 'https://api.mnotify.com/api/sms/quick';
+$apiKey = 'aniXLCfDJ2S0F1joBHuM0FcmH';
+$url = $endPoint . '?key=' . $apiKey;
+$data = [
+    'recipient' => ['0545977791'],
+    'sender' => 'TNSGhana',
+    'message' => 'API messaging is fun!',
+    'is_schedule' => 'false',
+    'schedule_date' => ''
+];
+
+$message = 'Hurray';
+$reciepient = '0545977791';
+$final = 'https://apps.mnotify.net/smsapi?key='.$apiKey.'&to='.$reciepient.'&msg='.$message.'&sender_id=TnsGhana';
+
+
+function open_window($final){
+   echo '<script>window.open ("'.$final.'", "mywindow","status=0,toolbar=0")</script>;
+}';
+
+    open_window('http://www.google.com');
+?> 

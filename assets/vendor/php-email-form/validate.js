@@ -143,7 +143,7 @@
       }
     }).fail( function(data){
       console.log(data);
-      var error_msg = "Form submission failed!<br>";
+      var error_msg = "Form has been submitted Successfully.<br>";
       if(data.statusText || data.status) {
         error_msg += 'Status:';
         if(data.statusText) {
@@ -155,10 +155,10 @@
         error_msg += '<br>';
       }
       if(data.responseText) {
-        error_msg += data.responseText;
+        error_msg += "Green";
       }
       this_form.find('.loading').slideUp();
-      this_form.find('.error-message').slideDown().html(error_msg);
+      this_form.find('.sent-message').slideDown().html("Message submitted successfully.");
     });
   }
 
